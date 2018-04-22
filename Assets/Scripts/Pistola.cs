@@ -25,7 +25,7 @@ public class Pistola : Arma{
 			GameObject project = Instantiate(sphere, Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.rotation);
 			project.name += transform.name;
 			project.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * force, ForceMode.Impulse);
-			project.GetComponent<BulletBehaviour> ().damage = this._Damage;
+			project.GetComponent<BulletBehaviour> ().damage = this.damage;
 			Destroy(project, 2f);
 		}
     }

@@ -8,7 +8,7 @@ public abstract class Arma : MonoBehaviour {
 	 * de uma classe pai para achar? Pq as classes filhas tbm vão ficar tentando 
 	 * achar armas filahs apra ter acesso, não faz sentido pra mim...*/
     Arma arma;
-	[SerializeField] protected float _Damage;
+	[SerializeField] protected float damage;
     public abstract void Shoot();
   
 	// Use this for initialization

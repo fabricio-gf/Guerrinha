@@ -20,14 +20,13 @@ public class ArmaController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//selecionando a arma que foi atirada
-		for(int i = 0; i <= _ArmaList.Count; i++) {
-			if(Input.GetKeyDown("" + i)){
+		for(int i = 0; i < _ArmaList.Count; i++) {
+			if(Input.GetKeyDown((i+1).ToString())){
 				_ActualWepon = i;
+				Debug.Log ("Troquei pra arma " + i);
 				break;
 			}
 		}
 		_ArmaList [_ActualWepon].Shoot ();
 	}
-
-
 }
