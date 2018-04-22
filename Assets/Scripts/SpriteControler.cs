@@ -29,7 +29,6 @@ public class SpriteControler : MonoBehaviour {
             actualRotation += actualDegree - transform.eulerAngles.y;
         }
         actualDegree = transform.eulerAngles.y;
-        print("actualDegree: " + actualDegree + " Actual Rotation: "+ actualRotation);
 
         if(actualRotation >= deltaDegree){
             spritePos++;
