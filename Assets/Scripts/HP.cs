@@ -10,11 +10,6 @@ public class HP : MonoBehaviour {
 	void Start () {
 		_actualHP = _MaxHP;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void TakeDamage(float damage){
 		_actualHP -= damage;

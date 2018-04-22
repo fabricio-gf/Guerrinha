@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour {
 	private NavMeshAgent _myAgent;
 	private Transform _Player;
-
+	private Arma _Arma;
 	public bool _Debug;
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		if (CanSeeTarget ()) {
 			_myAgent.destination = _Player.position;
+			//atirar
 		}
 	}
 
