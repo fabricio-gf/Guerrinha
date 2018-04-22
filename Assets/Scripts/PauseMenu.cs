@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MenuManager {
 
 	public GameObject InGameMenu;
+	public GameObject OptionMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,11 @@ public class PauseMenu : MenuManager {
 
 	public void CloseMenu() {
 		Time.timeScale = 1f;
+		InGameMenu.SetActive (false);
+	}
+
+	public void OpenOptions() {
+		OptionMenu.SetActive (true);
 		InGameMenu.SetActive (false);
 	}
 }
