@@ -5,13 +5,15 @@ using UnityEngine;
 public class ArmaController : MonoBehaviour {
 	//lista de referencia para todas as armas(scripts/componnetes) que este objeto possui
 	[SerializeField] private List<Arma> _ArmaList;
-    public SpriteRenderer[] sprites;
+    public Sprite[] sprites;
+    private SpriteRenderer spriteR;
     private bool[] armasUsaveis;
 	//indice da arma atualmente selecionada;
 	private int _ActualWepon;
 
 	// Use this for initialization
 	void Start () {
+        spriteR = GetComponent<SpriteRenderer>();
 		Arma[] armas = GetComponents<Arma> ();
         armasUsaveis = new bool[armas.Length];
 		foreach(Arma a in armas){
@@ -19,6 +21,8 @@ public class ArmaController : MonoBehaviour {
 		}
 		_ActualWepon = 0;
         armasUsaveis[0] = true;
+        armasUsaveis[1] = true;
+        armasUsaveis[2] = true;
     }
 	
 	// Update is called once per frame
@@ -27,7 +31,7 @@ public class ArmaController : MonoBehaviour {
 		for(int i = 0; i < _ArmaList.Count; i++) {
 			if(Input.GetKeyDown((i+1).ToString()) && armasUsaveis[i] == true){
 				_ActualWepon = i;
-				Debug.Log ("Troquei pra arma " + i);
+                spriteR.sprite = sprites[i];				
 				break;
 			}
 		}
