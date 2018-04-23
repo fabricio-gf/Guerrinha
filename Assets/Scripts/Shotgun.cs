@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Shotgun : Arma {
 
-    GameObject sphere;
-    private float timer = 0f;
     [SerializeField] private float shootDelay = 0.8f;
     [SerializeField] private float force = 100;
 	[SerializeField] private int BulletPerShoot = 7;
 	[SerializeField] private float Spread = 7;
 
-    // Use this for initialization
-    void Start() {
-        sphere = (GameObject)Resources.Load("Bullet", typeof(GameObject));
-    }
 
     // Update is called once per frame
     void Update() {
@@ -39,4 +33,5 @@ public class Shotgun : Arma {
 			ShootSoud ();
         }
     }
+
 }
