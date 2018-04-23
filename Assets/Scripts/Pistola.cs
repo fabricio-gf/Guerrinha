@@ -27,6 +27,7 @@ public class Pistola : Arma{
             project.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * force, ForceMode.Impulse);
 			project.GetComponent<BulletBehaviour> ().damage = this.damage;
 			Destroy(project, 2f);
+			ShootSoud ();
 		}
     }
 }

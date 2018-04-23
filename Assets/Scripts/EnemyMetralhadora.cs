@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPistol : EnemyArma {
-	private GameObject bullet;
-	private float timer = 0f;
-	[SerializeField] private float shootDelay = 0.5f;
-	[SerializeField] private float force = 100;
+public class EnemyMetralhadora : EnemyArma{
 
-	// Use this for initialization
-	void Start(){
+    GameObject bullet;
+    private float timer = 0f;
+    [SerializeField] private float shootDelay = 0.1f;
+    [SerializeField] private float force = 100;
+
+    // Use this for initialization
+    void Start(){
 		bullet = (GameObject)Resources.Load("Bullet", typeof(GameObject));
-	}
+    }
 
-	// Update is called once per frame
-	void Update(){
-		timer -= Time.deltaTime;
-	}
+    // Update is called once per frame
+    void Update(){
+        timer -= Time.deltaTime;
+    }
 
 	public override void Shoot(Vector3 origin, Vector3 direction) {
 		if (timer <= 0f) {
@@ -26,6 +27,7 @@ public class EnemyPistol : EnemyArma {
 			project.GetComponent<Rigidbody>().AddForce(direction.normalized * force, ForceMode.Impulse);
 			project.GetComponent<BulletBehaviour> ().damage = this.damage;
 			Destroy(project, 2f);
+			ShootSoud ();
 		}
-	}
+    }
 }

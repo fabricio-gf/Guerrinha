@@ -18,7 +18,9 @@ public class ArmaController : MonoBehaviour {
 			_ArmaList.Add (a);
 		}
 		_ActualWepon = 0;
-        armasUsaveis[0] = true;
+		armasUsaveis[0] = true;
+		armasUsaveis[1] = true;
+        armasUsaveis[2] = true;
     }
 	
 	// Update is called once per frame
@@ -27,7 +29,6 @@ public class ArmaController : MonoBehaviour {
 		for(int i = 0; i < _ArmaList.Count; i++) {
 			if(Input.GetKeyDown((i+1).ToString()) && armasUsaveis[i] == true){
 				_ActualWepon = i;
-				Debug.Log ("Troquei pra arma " + i);
 				break;
 			}
 		}

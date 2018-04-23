@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : Arma {
+public class EnemyShotgun : EnemyArma {
 
     GameObject sphere;
     private float timer = 0f;
@@ -21,16 +21,16 @@ public class Shotgun : Arma {
         timer -= Time.deltaTime;
     }
 
-    public override void Shoot() {
-        if (Input.GetKey(KeyCode.Mouse0) && timer <= 0f) {
+	public override void Shoot(Vector3 origin, Vector3 direction) {
+        if (timer <= 0f) {
 
 			timer = shootDelay;
 			for (int i = 0; i < BulletPerShoot; i++) {
 
 				Vector3 ErrorVector = new Vector3(Random.Range(-Spread,Spread),Random.Range(-Spread,Spread),Random.Range(-Spread,Spread));
-				Vector3 dir = (Camera.main.transform.forward + (ErrorVector.normalized*(Spread/180f)));
+				Vector3 dir = (direction + (ErrorVector.normalized*(Spread/180f)));
 
-				GameObject project = Instantiate(sphere, Camera.main.transform.position + Camera.main.transform.forward,Quaternion.LookRotation(dir));
+				GameObject project = Instantiate(sphere, origin + direction,Quaternion.LookRotation(dir));
 				project.name = transform.tag + "Bullet";
 				project.GetComponent<Rigidbody>().AddForce(project.transform.forward * force, ForceMode.Impulse);
 				project.GetComponent<BulletBehaviour>().damage = this.damage;
