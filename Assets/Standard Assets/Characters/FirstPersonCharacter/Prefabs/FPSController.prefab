@@ -99,11 +99,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Damage: 10
+  damage: 10
   shootDelay: 0.5
   force: 100
 --- !u!114 &114255599023152298
@@ -363,12 +363,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Damage: 0
+  damage: 7
   shootDelay: 0.1
   force: 100
 --- !u!114 &114410129387039468
@@ -394,4 +394,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac4bbced825e1449bf8dfba4a13dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHP: 1000
+  _MaxHP: 100
