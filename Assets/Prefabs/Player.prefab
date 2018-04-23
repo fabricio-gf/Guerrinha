@@ -41,9 +41,11 @@ GameObject:
   - component: {fileID: 114908445376467918}
   - component: {fileID: 54412145921994364}
   - component: {fileID: 82911687018271066}
+  - component: {fileID: 212299859057034474}
   - component: {fileID: 114212044486484774}
   - component: {fileID: 114147894219622454}
-  - component: {fileID: 114539107320318754}
+  - component: {fileID: 114390125066218086}
+  - component: {fileID: 114807707492696180}
   - component: {fileID: 114980945362673898}
   m_Layer: 0
   m_Name: Player
@@ -228,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 12
   shootDelay: 0.5
   force: 100
 --- !u!114 &114212044486484774
@@ -243,19 +245,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ArmaList: []
---- !u!114 &114539107320318754
+  sprites:
+  - {fileID: 21300000, guid: f3f1608ac388bc54ca30efddc7791f67, type: 3}
+  - {fileID: 21300000, guid: 3943d2839ed9ebc4896a08555877d612, type: 3}
+  - {fileID: 21300000, guid: 843412b219c8b4b4cab0edb0af69e4e3, type: 3}
+--- !u!114 &114390125066218086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308588683547854}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 540d336f2ca10a34d8571a9003790ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 7
-  shootDelay: 0.1
+  damage: 4
+  shootDelay: 0.3
+  force: 100
+--- !u!114 &114807707492696180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308588683547854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990837586bf51fb4d8ec42d530984665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 4
+  shootDelay: 1.2
   force: 100
 --- !u!114 &114908445376467918
 MonoBehaviour:
@@ -395,3 +415,45 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!212 &212299859057034474
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308588683547854}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
