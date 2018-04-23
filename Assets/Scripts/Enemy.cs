@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
 	private EnemyArma _Arma;
 	public bool _DrawDebugLine;
 	public float ErrorRange = 0.5f;
+	public GameObject drop;
 
 	// Use this for initialization
 	void Start () {
@@ -42,5 +43,9 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	void OnDestroy(){
+		if(drop!=null)Instantiate (drop, transform);
 	}
 }
