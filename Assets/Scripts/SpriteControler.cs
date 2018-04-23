@@ -14,17 +14,20 @@ public class SpriteControler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         spriteR = GetComponent<SpriteRenderer>();
-        spriteR.sprite = sprites[0];
-        actualDegree = transform.eulerAngles.y;
+		if (sprites.Length <= 0) {
+			sprites	= new Sprite[1];
+			sprites [0] = spriteR.sprite;
+		}
+		spriteR.sprite = sprites[0];
+		deltaDegree = 360 / sprites.Length;
+		actualDegree = transform.eulerAngles.y;
         actualRotation = 0f;
-        deltaDegree = 360 / sprites.Length;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //transform.LookAt(Camera.main.transform.position); // nao deu certo
         transform.forward = Camera.main.transform.forward; // deu certo
-
         if (Mathf.Abs((transform.eulerAngles.y - actualDegree)) < 350){ 
             actualRotation += actualDegree - transform.eulerAngles.y;
         }
