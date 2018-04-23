@@ -15,7 +15,7 @@ public class SpriteControler : MonoBehaviour {
 	void Start () {
         spriteR = GetComponent<SpriteRenderer>();
 		if (sprites.Length <= 0) {
-			sprites	= new Sprite[1];
+			sprites	= new Sprite[1];	
 			sprites [0] = spriteR.sprite;
 		}
 		spriteR.sprite = sprites[0];

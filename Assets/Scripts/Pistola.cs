@@ -14,6 +14,7 @@ public class Pistola : Arma {
     }
 
     public override void Shoot() {
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && timer <= 0f) {
             if (ammoLeft > 0) {
                 ammoLeft--;
@@ -23,6 +24,7 @@ public class Pistola : Arma {
                 project.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * force, ForceMode.Impulse);
                 project.GetComponent<BulletBehaviour>().damage = this.damage;
                 Destroy(project, 2f);
+				ShootSoud ();
             }
             else {
                 Reload();

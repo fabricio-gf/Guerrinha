@@ -21,9 +21,9 @@ public class EnemyPistol : EnemyArma {
 	public override void Shoot(Vector3 origin, Vector3 direction) {
 		if (timer <= 0f) {
 			timer = shootDelay;
-			GameObject project = Instantiate(bullet, origin + direction, Quaternion.LookRotation(direction));
+			GameObject project = Instantiate(bullet, origin + direction.normalized, Quaternion.LookRotation(direction.normalized));
 			project.name = transform.tag + "Bullet";
-			project.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * force, ForceMode.Impulse);
+			project.GetComponent<Rigidbody>().AddForce(direction.normalized * force, ForceMode.Impulse);
 			project.GetComponent<BulletBehaviour> ().damage = this.damage;
 			Destroy(project, 2f);
 		}

@@ -6,7 +6,7 @@ public class ArmaController : MonoBehaviour {
 	//lista de referencia para todas as armas(scripts/componnetes) que este objeto possui
 	[SerializeField]private List<Arma> _ArmaList;
 	//indice da arma atualmente selecionada;
-	private int _ActualWepon;
+	private int _ActualWeapon;
     // indice de armas que podem ser usadas
     public bool[] armasUsaveis;
 
@@ -17,8 +17,8 @@ public class ArmaController : MonoBehaviour {
 		foreach(Arma a in armas){
 			_ArmaList.Add (a);
 		}
-		_ActualWepon = 0;
-        armasUsaveis[0] = true;
+		_ActualWeapon = 0;
+		armasUsaveis[0] = true;
     }
 	
 	// Update is called once per frame
@@ -26,13 +26,13 @@ public class ArmaController : MonoBehaviour {
 		//selecionando a arma que foi atirada
 		for(int i = 0; i < _ArmaList.Count; i++) {
 			if(Input.GetKeyDown((i+1).ToString()) && armasUsaveis[i] == true){
-				_ActualWepon = i;			
+				_ActualWeapon = i;			
 				break;
 			}
 		}
-		_ArmaList [_ActualWepon].Shoot ();
+		_ArmaList [_ActualWeapon].Shoot ();
         if (Input.GetKeyDown(KeyCode.R)) {
-            _ArmaList[_ActualWepon].Reload();
+            _ArmaList[_ActualWeapon].Reload();
         }
 	}
 
