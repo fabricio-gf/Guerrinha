@@ -1,26 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: 2f66518bb210dcb429e81309e15582b9
-=======
-guid: 5b04dd6d63b7de24c8fed2071a788e3c
->>>>>>> origin/cartaz
+guid: cfa99eff05aee504ba8b163bca41a256
 folderAsset: yes
-timeCreated: 1524321532
+timeCreated: 1524350206
 licenseType: Free
 DefaultImporter:
-<<<<<<< HEAD
-=======
-guid: 5b04dd6d63b7de24c8fed2071a788e3c
-folderAsset: yes
-timeCreated: 1524323942
-licenseType: Free
-DefaultImporter:
-  externalObjects: {}
->>>>>>> origin/cartaz
-=======
-  externalObjects: {}
->>>>>>> origin/cartaz
   userData: 
   assetBundleName: 
   assetBundleVariant: 
