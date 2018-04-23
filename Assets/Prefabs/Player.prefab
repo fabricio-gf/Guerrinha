@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308588683547854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: 1, z: -0.09}
+  m_LocalPosition: {x: -0.03, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938949866388430}
@@ -112,11 +112,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!54 &54412145921994364
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -230,8 +230,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
-  shootDelay: 0.5
+  damage: 16
+  ShootAudioClips:
+  - {fileID: 8300000, guid: d7dbc00f4deb8474f9019d1db3c22d01, type: 3}
+  - {fileID: 8300000, guid: 553aac3f32e64eb4890a6fd5151d98f5, type: 3}
+  - {fileID: 8300000, guid: ef86890db1cb55348a9e1cc0251240e3, type: 3}
+  - {fileID: 8300000, guid: e279fc6e3eeb0ca458e8ddbb4f1e822f, type: 3}
+  - {fileID: 8300000, guid: a72380e96dd6ea540ae4c12384eb8a07, type: 3}
+  - {fileID: 8300000, guid: eccb89c1b8ee21844bc49c890ad726e0, type: 3}
+  - {fileID: 8300000, guid: 7d3ac95d06bd97b4fa567a34b1121d9a, type: 3}
+  - {fileID: 8300000, guid: c30756172dd84834da8cc1d3faa382cf, type: 3}
+  - {fileID: 8300000, guid: 9627ad7ffc4eab8499636f6550a209f5, type: 3}
+  clipAmmo: 12
+  totalAmmo: 24
+  reloadTime: 2.2
+  groundBullets: 6
+  shootDelay: 0.6
   force: 100
 --- !u!114 &114212044486484774
 MonoBehaviour:
@@ -245,10 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ArmaList: []
-  sprites:
-  - {fileID: 21300000, guid: f3f1608ac388bc54ca30efddc7791f67, type: 3}
-  - {fileID: 21300000, guid: 3943d2839ed9ebc4896a08555877d612, type: 3}
-  - {fileID: 21300000, guid: 843412b219c8b4b4cab0edb0af69e4e3, type: 3}
+  armasUsaveis: 
 --- !u!114 &114390125066218086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,7 +271,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d336f2ca10a34d8571a9003790ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 6
+  ShootAudioClips:
+  - {fileID: 8300000, guid: b449b208404e2d348b1493f87023f1e2, type: 3}
+  clipAmmo: 20
+  totalAmmo: 40
+  reloadTime: 3.4
+  groundBullets: 15
   shootDelay: 0.3
   force: 100
 --- !u!114 &114807707492696180
@@ -274,9 +291,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990837586bf51fb4d8ec42d530984665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 6
+  ShootAudioClips:
+  - {fileID: 8300000, guid: d5b660ddd29c594449ee60f30dd56be0, type: 3}
+  clipAmmo: 6
+  totalAmmo: 6
+  reloadTime: 5
+  groundBullets: 3
   shootDelay: 1.2
   force: 100
+  BulletPerShoot: 7
+  Spread: 60
 --- !u!114 &114908445376467918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,11 +399,9 @@ MonoBehaviour:
     BobDuration: 0.2
     BobAmount: 0.1
   m_StepInterval: 5
-  m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_FootstepSounds: []
+  m_JumpSound: {fileID: 0}
+  m_LandSound: {fileID: 0}
 --- !u!114 &114980945362673898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac4bbced825e1449bf8dfba4a13dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHP: 100
+  _MaxHP: 200
 --- !u!124 &124505519372041042
 Behaviour:
   m_ObjectHideFlags: 1
@@ -424,6 +447,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -439,6 +463,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
