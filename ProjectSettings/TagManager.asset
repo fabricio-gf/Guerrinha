@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Ammo
   - hpbar
+  - Music
   layers:
   - Default
   - TransparentFX

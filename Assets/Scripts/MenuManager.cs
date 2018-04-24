@@ -6,18 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
+    public GameObject Music;
 
 	public void ChangeScene(string scene) {
 		Time.timeScale = 1f;
+        Music = GameObject.FindGameObjectWithTag("Music");
+        if(scene == "Menu")
+        {
+            Destroy(Music);
+        }
 		SceneManager.LoadScene (scene);
 	}
 
