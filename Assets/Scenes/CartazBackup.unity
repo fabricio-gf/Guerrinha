@@ -333,11 +333,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114212044486484774, guid: 0b0c348aa874cb246aff4d5b45b199b0,
-        type: 2}
-      propertyPath: sprites.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4782248047492196, guid: 0b0c348aa874cb246aff4d5b45b199b0, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.03
@@ -370,34 +365,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114908445376467918, guid: 0b0c348aa874cb246aff4d5b45b199b0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114212044486484774, guid: 0b0c348aa874cb246aff4d5b45b199b0,
         type: 2}
       propertyPath: holdingWeapon
       value: 
       objectReference: {fileID: 1023188758}
-    - target: {fileID: 114212044486484774, guid: 0b0c348aa874cb246aff4d5b45b199b0,
+    - target: {fileID: 212299859057034474, guid: 0b0c348aa874cb246aff4d5b45b199b0,
         type: 2}
-      propertyPath: sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 252552a02f924f749b56b08972522807,
-        type: 3}
-    - target: {fileID: 114212044486484774, guid: 0b0c348aa874cb246aff4d5b45b199b0,
-        type: 2}
-      propertyPath: sprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7bdc94f002d91dc40b650dcc85910924,
-        type: 3}
-    - target: {fileID: 114212044486484774, guid: 0b0c348aa874cb246aff4d5b45b199b0,
-        type: 2}
-      propertyPath: sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a61b9aee67d1af4e9380f0d539f7486,
-        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b0c348aa874cb246aff4d5b45b199b0, type: 2}
   m_IsPrefabParent: 0

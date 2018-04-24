@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308588683547854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1, z: 0}
+  m_LocalPosition: {x: -0.03, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938949866388430}
@@ -241,6 +241,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7d3ac95d06bd97b4fa567a34b1121d9a, type: 3}
   - {fileID: 8300000, guid: c30756172dd84834da8cc1d3faa382cf, type: 3}
   - {fileID: 8300000, guid: 9627ad7ffc4eab8499636f6550a209f5, type: 3}
+  ReloadAudioClip: {fileID: 8300000, guid: 623ff078ee412514688a40293fe98e38, type: 3}
   clipAmmo: 12
   totalAmmo: 24
   reloadTime: 2.2
@@ -260,6 +261,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ArmaList: []
   armasUsaveis: 
+  holdingWeapon: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 252552a02f924f749b56b08972522807, type: 3}
+  - {fileID: 21300000, guid: 3a61b9aee67d1af4e9380f0d539f7486, type: 3}
+  - {fileID: 21300000, guid: 7bdc94f002d91dc40b650dcc85910924, type: 3}
 --- !u!114 &114390125066218086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,6 +280,7 @@ MonoBehaviour:
   damage: 2
   ShootAudioClips:
   - {fileID: 8300000, guid: b449b208404e2d348b1493f87023f1e2, type: 3}
+  ReloadAudioClip: {fileID: 8300000, guid: 623ff078ee412514688a40293fe98e38, type: 3}
   clipAmmo: 20
   totalAmmo: 40
   reloadTime: 3.4
@@ -294,6 +301,7 @@ MonoBehaviour:
   damage: 3
   ShootAudioClips:
   - {fileID: 8300000, guid: d5b660ddd29c594449ee60f30dd56be0, type: 3}
+  ReloadAudioClip: {fileID: 8300000, guid: 623ff078ee412514688a40293fe98e38, type: 3}
   clipAmmo: 6
   totalAmmo: 6
   reloadTime: 5

@@ -8,6 +8,7 @@ public abstract class Arma : MonoBehaviour {
 
 	[SerializeField] protected float damage;
 	[SerializeField] private AudioClip[] ShootAudioClips;
+	[SerializeField] private AudioClip ReloadAudioClip;
 	private AudioSource _MAudioSource;
 
 	protected void ShootSoud(){
@@ -48,6 +49,7 @@ public abstract class Arma : MonoBehaviour {
     }
 
     public void Reload() {
+		_MAudioSource.PlayOneShot(ReloadAudioClip);
         if (totalAmmo > 0) {
             if (clipAmmo - ammoLeft > totalAmmo) {
                 ammoLeft += totalAmmo;

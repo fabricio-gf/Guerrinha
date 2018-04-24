@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArmaController : MonoBehaviour {
 	//lista de referencia para todas as armas(scripts/componnetes) que este objeto possui
@@ -49,5 +50,9 @@ public class ArmaController : MonoBehaviour {
     public void getAmmo(int i){
         _ArmaList[i].GetAmmo();
     }
+
+	void OnDestroy(){
+		SceneManager.LoadScene ("GameOver");
+	}
 
 }
