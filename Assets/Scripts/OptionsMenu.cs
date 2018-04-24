@@ -16,7 +16,7 @@ public class OptionsMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Audio = Player.transform.GetChild (0).GetComponent<AudioSource> ();
+		Audio = Player.GetComponent<AudioSource> ();
 	}
 	
 	public void SetMusicVolume(float volume) {
@@ -42,8 +42,7 @@ public class OptionsMenu : MonoBehaviour {
 
     public void Mute(bool isMuted)
     {
-        print("ismuted " + isMuted);
-        Player.GetComponent<AudioListener>().enabled = isMuted;
+        Player.GetComponent<AudioListener>().enabled = !isMuted;
         print(Player.GetComponent<AudioListener>().enabled);
     }
 }
