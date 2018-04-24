@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &122803725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   - {fileID: 1397376225}
   - {fileID: 1422590290}
   - {fileID: 1328499625}
-  EnemyDelay: 0
+  EnemyDelay: 5
 --- !u!4 &122803726
 Transform:
   m_ObjectHideFlags: 0
