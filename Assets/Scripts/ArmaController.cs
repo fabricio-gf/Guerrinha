@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArmaController : MonoBehaviour {
 	//lista de referencia para todas as armas(scripts/componnetes) que este objeto possui
@@ -9,10 +10,15 @@ public class ArmaController : MonoBehaviour {
 	private int _ActualWeapon;
     // indice de armas que podem ser usadas
     public bool[] armasUsaveis;
+    // arma na mao;
+    public Image holdingWeapon;
+
+    [SerializeField] Sprite[] sprites;
 
 	// Use this for initialization
 	void Start () {
-		Arma[] armas = GetComponents<Arma> ();
+        holdingWeapon.sprite = sprites[0];
+        Arma[] armas = GetComponents<Arma> ();
         armasUsaveis = new bool[armas.Length];
 		foreach(Arma a in armas){
 			_ArmaList.Add (a);
@@ -29,7 +35,8 @@ public class ArmaController : MonoBehaviour {
 		//selecionando a arma que foi atirada
 		for(int i = 0; i < _ArmaList.Count; i++) {
 			if(Input.GetKeyDown((i+1).ToString()) && armasUsaveis[i] == true){
-				_ActualWeapon = i;			
+				_ActualWeapon = i;
+                holdingWeapon.sprite = sprites[i];
 				break;
 			}
 		}
