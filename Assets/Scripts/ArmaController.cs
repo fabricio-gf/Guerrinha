@@ -16,8 +16,12 @@ public class ArmaController : MonoBehaviour {
 
     [SerializeField] Sprite[] sprites;
 
+	private GameObject[] ammoUI;
+
 	// Use this for initialization
 	void Start () {
+		ammoUI = GameObject.FindGameObjectsWithTag ("Ammo");
+
         holdingWeapon.sprite = sprites[0];
         Arma[] armas = GetComponents<Arma> ();
         armasUsaveis = new bool[armas.Length];
@@ -33,6 +37,7 @@ public class ArmaController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateAmmo ();
 		//selecionando a arma que foi atirada
 		for(int i = 0; i < _ArmaList.Count; i++) {
 			if(Input.GetKeyDown((i+1).ToString()) && armasUsaveis[i] == true){
@@ -45,6 +50,13 @@ public class ArmaController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             _ArmaList[_ActualWeapon].Reload();
         }
+	}
+
+	void UpdateAmmo(){
+		for (int i = 0; i < ammoUI.Length; i++) {
+			if( i < _ArmaList[_ActualWeapon].ammoLeft)ammoUI [i].SetActive (true);
+			else ammoUI [i].SetActive (false);
+		}
 	}
 
     public void getAmmo(int i){

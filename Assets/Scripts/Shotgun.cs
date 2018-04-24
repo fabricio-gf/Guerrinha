@@ -17,20 +17,25 @@ public class Shotgun : Arma {
 
     public override void Shoot() {
         if (Input.GetKey(KeyCode.Mouse0) && timer <= 0f) {
+			if (ammoLeft > 0) {
+				ammoLeft--;
+				timer = shootDelay;
+				for (int i = 0; i < BulletPerShoot; i++) {
 
-			timer = shootDelay;
-			for (int i = 0; i < BulletPerShoot; i++) {
+					Vector3 ErrorVector = new Vector3 (Random.Range (-Spread, Spread), Random.Range (-Spread, Spread), Random.Range (-Spread, Spread));
+					Vector3 dir = (Camera.main.transform.forward + (ErrorVector.normalized * (Spread / 180f)));
 
-				Vector3 ErrorVector = new Vector3(Random.Range(-Spread,Spread),Random.Range(-Spread,Spread),Random.Range(-Spread,Spread));
-				Vector3 dir = (Camera.main.transform.forward + (ErrorVector.normalized*(Spread/180f)));
-
-				GameObject project = Instantiate(sphere, Camera.main.transform.position + Camera.main.transform.forward,Quaternion.LookRotation(dir));
-				project.name = transform.tag + "Bullet";
-				project.GetComponent<Rigidbody>().AddForce(project.transform.forward * force, ForceMode.Impulse);
-				project.GetComponent<BulletBehaviour>().damage = this.damage;
-				Destroy(project, 2f);
+					GameObject project = Instantiate (sphere, Camera.main.transform.position + Camera.main.transform.forward, Quaternion.LookRotation (dir));
+					project.name = transform.tag + "Bullet";
+					project.GetComponent<Rigidbody> ().AddForce (project.transform.forward * force, ForceMode.Impulse);
+					project.GetComponent<BulletBehaviour> ().damage = this.damage;
+					Destroy (project, 2f);
+				}
+				ShootSoud ();
+			}else{
+				Reload();
 			}
-			ShootSoud ();
+
         }
     }
 

@@ -9,6 +9,7 @@ public abstract class Arma : MonoBehaviour {
 	[SerializeField] protected float damage;
 	[SerializeField] private AudioClip[] ShootAudioClips;
 	[SerializeField] private AudioClip ReloadAudioClip;
+	private GameObject ammoUI;
 	private AudioSource _MAudioSource;
 
 	protected void ShootSoud(){
@@ -26,8 +27,8 @@ public abstract class Arma : MonoBehaviour {
  
 
     [SerializeField] protected int clipAmmo;
-    protected int ammoLeft;
-    [SerializeField] protected int totalAmmo;
+	public int ammoLeft;
+    [SerializeField] public int totalAmmo;
 
     [SerializeField] protected float reloadTime;
 
@@ -42,7 +43,9 @@ public abstract class Arma : MonoBehaviour {
         timer = 0;
         ammoLeft = clipAmmo;
         sphere = (GameObject)Resources.Load("Bullet", typeof(GameObject));
+		ammoUI = GameObject.FindGameObjectWithTag ("Ammo");
     }
+		
 
     public void GetAmmo() {
         totalAmmo += groundBullets;
