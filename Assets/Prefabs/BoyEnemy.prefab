@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439780140337040}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 1, z: 3}
+  m_LocalPosition: {x: -3.4383159, y: 6.107756e-18, z: -2.7506888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4880624614607094}
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _DrawDebugLine: 1
   ErrorRange: 0.5
+  drop: {fileID: 1108557629215406, guid: e45f5c206d2af0c458c6d5214db1998c, type: 2}
 --- !u!114 &114859958656743880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac4bbced825e1449bf8dfba4a13dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHP: 200
+  _MaxHP: 12
 --- !u!136 &136573915469979298
 CapsuleCollider:
   m_ObjectHideFlags: 1
