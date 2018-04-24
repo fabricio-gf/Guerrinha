@@ -21,6 +21,7 @@ public class ArmaController : MonoBehaviour {
 		armasUsaveis[0] = true;
 		armasUsaveis[1] = true;
 		armasUsaveis[2] = true;
+
     }
 	
 	// Update is called once per frame

@@ -29,12 +29,12 @@ public class PauseMenu : MenuManager {
 	}
 
 	public void CloseMenu() {
-		Time.timeScale = 1f;
+        Time.timeScale = 1f;
 		InGameMenu.SetActive (false);
 	}
 
 	public void OpenOptions() {
-		OptionMenu.SetActive (true);
+        OptionMenu.SetActive (true);
 		InGameMenu.SetActive (false);
 	}
 }

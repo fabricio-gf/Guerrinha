@@ -11,6 +11,8 @@ public class OptionsMenu : MonoBehaviour {
 	public GameObject OptionMenu;
 	public AudioMixer audioMixer;
 
+    public GameObject Player;
+
 	// Use this for initialization
 	void Start () {
 
@@ -36,4 +38,11 @@ public class OptionsMenu : MonoBehaviour {
 		OptionMenu.SetActive (false);
 		InGameMenu.SetActive (true);
 	}
+
+    public void Mute(bool isMuted)
+    {
+        print("ismuted " + isMuted);
+        Player.GetComponent<AudioListener>().enabled = isMuted;
+        print(Player.GetComponent<AudioListener>().enabled);
+    }
 }
