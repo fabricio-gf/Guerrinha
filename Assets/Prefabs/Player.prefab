@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249d1f4464597847855cb24e91daaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 16
+  damage: 4
   ShootAudioClips:
   - {fileID: 8300000, guid: d7dbc00f4deb8474f9019d1db3c22d01, type: 3}
   - {fileID: 8300000, guid: 553aac3f32e64eb4890a6fd5151d98f5, type: 3}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d336f2ca10a34d8571a9003790ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 2
   ShootAudioClips:
   - {fileID: 8300000, guid: b449b208404e2d348b1493f87023f1e2, type: 3}
   clipAmmo: 20
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990837586bf51fb4d8ec42d530984665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 3
   ShootAudioClips:
   - {fileID: 8300000, guid: d5b660ddd29c594449ee60f30dd56be0, type: 3}
   clipAmmo: 6
@@ -300,7 +300,7 @@ MonoBehaviour:
   groundBullets: 3
   shootDelay: 1.2
   force: 100
-  BulletPerShoot: 7
+  BulletPerShoot: 13
   Spread: 60
 --- !u!114 &114908445376467918
 MonoBehaviour:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac4bbced825e1449bf8dfba4a13dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHP: 200
+  _MaxHP: 40
 --- !u!124 &124505519372041042
 Behaviour:
   m_ObjectHideFlags: 1

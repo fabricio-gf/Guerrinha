@@ -45,7 +45,15 @@ public class Enemy : MonoBehaviour {
 		return false;
 	}
 
-	void OnDestroy(){
-		if(drop!=null)Instantiate (drop, transform);
+	void OnDestroy() {
+		print(name + " was destroyed");
+		if(drop!=null)Instantiate (drop).transform.position = transform.position - Vector3.up;
+
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.CompareTag ("Bullet") && !col.name.Contains (transform.tag)) {
+			Debug.Log ("AI");
+		}
 	}
 }
