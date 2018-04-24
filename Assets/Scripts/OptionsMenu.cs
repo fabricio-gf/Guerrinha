@@ -12,14 +12,15 @@ public class OptionsMenu : MonoBehaviour {
 	public AudioMixer audioMixer;
 
     public GameObject Player;
+	private AudioSource Audio;
 
 	// Use this for initialization
 	void Start () {
-
+		Audio = Player.transform.GetChild (0).GetComponent<AudioSource> ();
 	}
 	
 	public void SetMusicVolume(float volume) {
-		audioMixer.SetFloat ("MusicVolume", volume);
+		Audio.volume = volume;
 	}
 
 	public void SetSFXVolume(float volume) {
