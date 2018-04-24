@@ -22,7 +22,7 @@ public class ArmaController : MonoBehaviour {
 		_ActualWepon = 0;
         armasUsaveis[0] = true;
         armasUsaveis[1] = true;
-        armasUsaveis[2] = true;
+        //armasUsaveis[2] = true;
     }
 	
 	// Update is called once per frame
