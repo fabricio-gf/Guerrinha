@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour {
 	public void ChangeScene(string scene) {
 		Time.timeScale = 1f;
         Music = GameObject.FindGameObjectWithTag("Music");
-        if(scene == "Menu")
+        if(scene == "Menu" || scene == "cartaz")
         {
             Destroy(Music);
         }
